@@ -7,7 +7,10 @@ from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
 from pyDownloader import getVideo,getAudio
 import os
-from win32com.shell import shell, shellcon
+import platform
+
+if platform.system() == 'Windows':
+    from win32com.shell import shell, shellcon
 
 class Form(QtWidgets.QDialog):
     def __init__(self, parent=None):
@@ -21,7 +24,12 @@ class Form(QtWidgets.QDialog):
         self.ui.buttonBox.accepted.connect(self.accept)
         self.ui.buttonBox.rejected.connect(self.reject)
         self.ui.videoRadio.setChecked(True)
-        self.ui.outputText.setText(shell.SHGetFolderPath(0, shellcon.CSIDL_PERSONAL, None, 0))
+        if platform.system() == 'Windows':
+            self.ui.outputText.setText(shell.SHGetFolderPath(0, shellcon.CSIDL_PERSONAL, None, 0))
+        elif platform.system() == 'Darwin':
+            self.ui.outputText.setText(os.path.expanduser("~/Desktop/"))
+        else:
+            self.ui.outputText.setText(os.path.expanduser("~/"))
     def openFileNameDialog(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog

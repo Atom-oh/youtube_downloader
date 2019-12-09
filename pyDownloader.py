@@ -8,12 +8,16 @@ def getVideo(urls, outputPath=os.getcwd()):
         try:
             yt = pytube.YouTube(url)
             yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download(outputPath)
-        except:
-            try:
-                yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().all()[1].download(outputPath)
-            except OSError as err:
-                print(err.reason)
-                print("Cannot download")
+        except OSError as err:
+            print(err)
+        except IOError:
+            print ("Error: File does not appear to exist.")
+            # try:
+            #     if yt:
+            #         yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().all()[1].download(outputPath)
+            # except OSError as err:
+            #     print(err.reason)
+            #     print("Cannot download")
 
 def getAudio(urls, outputPath=os.getcwd()):
     for url in urls:

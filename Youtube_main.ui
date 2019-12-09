@@ -6,124 +6,107 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1600</width>
-    <height>1200</height>
+    <width>1233</width>
+    <height>762</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="gridLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>1421</width>
-      <height>1091</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0">
-     <item row="6" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="text">
-        <string>저장위치</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QRadioButton" name="videoRadio">
-       <property name="text">
-        <string>동영상</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPlainTextEdit" name="youtubeURL"/>
-     </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="outputText"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Youtube 주소</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QRadioButton" name="mp3Radio">
-       <property name="text">
-        <string>mp3</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>3</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>저장형식</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QDialogButtonBox" name="buttonBox">
-    <property name="geometry">
-     <rect>
-      <x>1450</x>
-      <y>10</y>
-      <width>131</width>
-      <height>241</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-    <property name="standardButtons">
-     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="outputButton">
-    <property name="geometry">
-     <rect>
-      <x>1450</x>
-      <y>1070</y>
-      <width>112</width>
-      <height>34</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>선택</string>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>Youtube 주소</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPlainTextEdit" name="youtubeURL">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>200</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QDialogButtonBox" name="buttonBox">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="standardButtons">
+         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>3</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>저장형식</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QRadioButton" name="videoRadio">
+        <property name="text">
+         <string>동영상</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QRadioButton" name="mp3Radio">
+        <property name="text">
+         <string>mp3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>저장위치</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLineEdit" name="outputText"/>
+      </item>
+      <item row="6" column="2">
+       <widget class="QPushButton" name="outputButton">
+        <property name="text">
+         <string>선택</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1600</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuYoutubeDownloader">
-    <property name="title">
-     <string>YoutubeDownloader</string>
-    </property>
-    <addaction name="actionExit"/>
-   </widget>
-   <addaction name="menuYoutubeDownloader"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
